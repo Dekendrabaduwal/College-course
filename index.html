@@ -2,50 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tapendra Design & Construction</title>
+  <title>Tapendra Design & Construction | Civil Engineering Consultancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tapendra Design & Construction – Professional civil engineering consultancy with 6+ years experience and 100+ completed projects.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Tapendra Design & Construction</h1>
-  <p>Civil Engineering Consultancy | 6+ Years Experience</p>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">
+    <span>T</span>apendra Design & Construction
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Professional Civil Engineering Consultancy</h1>
+    <p>6+ Years Experience · 100+ Projects Completed</p>
+    <button onclick="openContact()">Get Consultation</button>
+  </div>
+</section>
 
-<section id="about">
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
   <h2>About Us</h2>
-  <p>
-    Tapendra Design and Construction is a professional civil engineering
+  <p class="center">
+    <strong>Tapendra Design & Construction</strong> is a professional civil engineering
     consultancy led by <strong>Tapendra Baduwal</strong>.
-    With more than <strong>6 years of experience</strong> in different fields of
-    civil engineering, we provide reliable, practical, and cost-effective
-    engineering solutions.
+    With more than <strong>6 years of hands-on experience</strong> across residential,
+    commercial, and infrastructure projects, we deliver practical,
+    economical, and technically sound engineering solutions.
   </p>
+
+  <div class="stats">
+    <div><span class="counter" data-target="6">0</span>+ Years Experience</div>
+    <div><span class="counter" data-target="100">0</span>+ Projects</div>
+    <div><span class="counter" data-target="50">0</span>+ Clients</div>
+  </div>
 </section>
 
-<section id="services">
+<!-- ================= SERVICES ================= -->
+<section id="services" class="section light">
   <h2>Our Services</h2>
-  <ul>
-    <li>Structural Design (RCC & Steel)</li>
-    <li>Building Drawing & Drafting</li>
-    <li>Quantity Estimation & BOQ</li>
-    <li>Site Supervision</li>
-    <li>Project Planning & Consultancy</li>
-  </ul>
+  <div class="grid">
+    <div class="card">Structural Design (RCC / Steel)</div>
+    <div class="card">Architectural Drawings</div>
+    <div class="card">Quantity Estimation & BOQ</div>
+    <div class="card">Site Supervision</div>
+    <div class="card">Project Planning & Scheduling</div>
+    <div class="card">Tender Documents</div>
+    <div class="card">Feasibility & Cost Analysis</div>
+    <div class="card">Construction Consultancy</div>
+  </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Information</h2>
-  <p><strong>Name:</strong> Tapendra Baduwal</p>
-  <p><strong>Email:</strong> tapendra@example.com</p>
-  <p><strong>Phone:</strong> +977-98XXXXXXXX</p>
-  <p><strong>Location:</strong> Nepal</p>
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <h2>Selected Projects</h2>
 
-  <
+  <div class="filter">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('residential')">Residential</button>
+    <button onclick="filterProjects('commercial')">Commercial</button>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project residential">Residential Building – 2024</div>
+    <div class="project commercial">Commercial Complex – 2023</div>
+    <div class="project residential">Private House – 2022</div>
+    <div class="project commercial">Office Building – 2021</div>
+    <div class="project residential">Apartment Design – 2023</div>
+    <div class="project commercial">Retail Plaza – 2024</div>
+  </div>
+
+  <p class="center muted">And 90+ more completed projects.</p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section light">
+  <h2>Contact Us</h2>
+  <p class="center">
+    <strong>Name:</strong> Tapendra Baduwal<br>
+    <strong>Phone:</strong> 9858033890<br>
+    <strong>Location:</strong> Nepal
+  </p>
+
+  <button class="contact-btn" onclick="openContact()">Send Message</button>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 Tapendra Design & Construction · All Rights Reserved
+</footer>
+
+<!-- ================= CONTACT MODAL ================= -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeContact()" class="close">&times;</span>
+    <h3>Contact Form</h3>
+    <input placeholder="Your Name">
+    <input placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button>Submit</button>
+  </div>
+</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/9779858033890" class="whatsapp">WhatsApp</a>
+
+<script src="script.js"></script>
+</body>
+</html>
