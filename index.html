@@ -3,678 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tapendra Design &amp; Construction - Premium Civil Engineering Consultancy in Nepal. 6+ years experience. 100+ projects completed. Structural design, architectural drawings, project management &amp; more.">
-    <title>Tapendra Design &amp; Construction | Civil Engineering Consultancy Nepal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tapendra Design & Construction | Civil Engineering Consultancy</title>
+    <meta name="description" content="Professional civil engineering consultancy in Nepal. Led by Tapendra Baduwal, with 6+ years experience and 100+ successful projects.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #0a3d62;
-            --accent: #166534;
-            --gold: #d4af77;
-            --charcoal: #2c3e50;
-        }
-        
-        * {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-        
-        .tail-container * {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .sticky-nav {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hero-bg {
-            background: linear-gradient(rgba(10, 61, 98, 0.85), rgba(22, 101, 52, 0.75)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
-        }
-        
-        .section-header {
-            position: relative;
-        }
-        
-        .section-header::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: #d4af77;
-            bottom: -8px;
-            left: 0;
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 25px 25px 0 -10px rgba(212, 175, 119, 0.15);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -2px;
-            left: 0;
-            background-color: #d4af77;
-        }
-        
-        .nav-link.active:after {
-            width: 100%;
-        }
-        
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-        
-        .project-filter.active {
-            background-color: #0a3d62;
-            color: white;
-            box-shadow: 0 10px 15px -3px rgb(10 61 98);
-        }
-    </style>
 </head>
-<body class="tail-container">
-    <!-- STICKY NAVIGATION -->
-    <nav id="navbar" class="sticky-nav bg-white border-b border-gray-100 shadow-sm z-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="px-6 py-5 flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
-                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="#0a3d62" stroke-width="4"/>
-                        <path d="M16 24H32" stroke="#d4af77" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M24 16V32" stroke="#d4af77" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="24" cy="24" r="4" fill="#166534"/>
-                    </svg>
-                    <div>
-                        <span class="heading-font text-3xl font-semibold tracking-[-1px] text-[#0a3d62]">Tapendra</span>
-                        <span class="text-[#166534] text-xl font-medium tracking-widest">DESIGN &amp; CONSTRUCTION</span>
-                    </div>
-                </div>
+<body>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-x-8 text-[#2c3e50] font-medium">
-                    <a onclick="smoothScrollTo('home')" class="nav-link cursor-pointer text-lg">Home</a>
-                    <a onclick="smoothScrollTo('about')" class="nav-link cursor-pointer text-lg">About</a>
-                    <a onclick="smoothScrollTo('services')" class="nav-link cursor-pointer text-lg">Services</a>
-                    <a onclick="smoothScrollTo('projects')" class="nav-link cursor-pointer text-lg">Projects</a>
-                    <a onclick="smoothScrollTo('whyus')" class="nav-link cursor-pointer text-lg">Why Us</a>
-                    <a onclick="smoothScrollTo('testimonials')" class="nav-link cursor-pointer text-lg">Testimonials</a>
-                    <a onclick="smoothScrollTo('contact')" class="nav-link cursor-pointer text-lg">Contact</a>
-                </div>
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-t">T</span>apendra <span class="logo-sub">Design & Construction</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact" class="btn-nav">Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                <div class="flex items-center gap-x-4">
-                    <a href="https://wa.me/9779858033890?text=Hello%20Tapendra%20Design%20%26%20Construction%2C%20I%20would%20like%20to%20discuss%20a%20project" 
-                       target="_blank"
-                       class="flex items-center gap-x-2 bg-[#166534] hover:bg-[#1e5631] text-white px-6 py-3 rounded-2xl font-semibold text-sm">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-[#0a3d62]">
-                        <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 flex flex-col gap-y-4 text-[#2c3e50] font-medium">
-                <a onclick="smoothScrollTo('home');toggleMobileMenu()" class="py-2">Home</a>
-                <a onclick="smoothScrollTo('about');toggleMobileMenu()" class="py-2">About</a>
-                <a onclick="smoothScrollTo('services');toggleMobileMenu()" class="py-2">Services</a>
-                <a onclick="smoothScrollTo('projects');toggleMobileMenu()" class="py-2">Projects</a>
-                <a onclick="smoothScrollTo('whyus');toggleMobileMenu()" class="py-2">Why Choose Us</a>
-                <a onclick="smoothScrollTo('testimonials');toggleMobileMenu()" class="py-2">Testimonials</a>
-                <a onclick="smoothScrollTo('contact');toggleMobileMenu()" class="py-2">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-bg h-screen flex items-center relative text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-5 py-2.5 rounded-3xl border border-white/30">
-                    <div class="w-2 h-2 bg-[#d4af77] rounded-full animate-pulse"></div>
-                    NEPAL'S PREMIUM CIVIL ENGINEERING CONSULTANCY
-                </div>
-                
-                <h1 class="heading-font text-6xl md:text-7xl leading-none font-semibold tracking-[-2px]">
-                    Engineering<br>Excellence.<br>Built to Last.
-                </h1>
-                
-                <p class="text-xl md:text-2xl max-w-md text-white/90">
-                    6+ years of trusted expertise • 100+ successfully delivered projects<br>
-                    Structural | Architectural | Project Management
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <button onclick="smoothScrollTo('contact')"
-                            class="bg-[#d4af77] hover:bg-[#c9a66b] text-[#0a3d62] font-semibold px-10 py-5 rounded-3xl text-lg flex items-center gap-x-3 shadow-xl">
-                        <span>GET A FREE CONSULTATION</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                    
-                    <a href="https://wa.me/9779858033890" target="_blank"
-                       class="border border-white/70 hover:border-white flex items-center gap-x-3 px-8 py-5 rounded-3xl text-lg font-medium">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
-                
-                <div class="flex items-center gap-x-8 text-sm">
-                    <div class="flex items-center">
-                        <i class="fa-solid fa-check-circle text-[#d4af77] mr-2"></i>
-                        ISO-aligned quality standards
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fa-solid fa-check-circle text-[#d4af77] mr-2"></i>
-                        Fully licensed in Nepal
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Trust signals -->
-            <div class="hidden md:flex flex-col justify-end h-full pb-16">
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20">
-                    <div class="flex items-center gap-x-8 text-white">
-                        <div>
-                            <div class="text-5xl font-semibold heading-font">6+</div>
-                            <div class="text-sm uppercase tracking-widest">Years Excellence</div>
-                        </div>
-                        <div class="h-12 w-px bg-white/30"></div>
-                        <div>
-                            <div class="text-5xl font-semibold heading-font">100+</div>
-                            <div class="text-sm uppercase tracking-widest">Projects Delivered</div>
-                        </div>
-                        <div class="h-12 w-px bg-white/30"></div>
-                        <div>
-                            <div class="text-5xl font-semibold heading-font">50+</div>
-                            <div class="text-sm uppercase tracking-widest">Happy Clients</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-white/70 text-sm">
-            <div class="mb-2">SCROLL FOR MORE</div>
-            <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
-        </div>
-        
-        <!-- Founder badge -->
-        <div class="absolute bottom-8 right-8 hidden lg:flex items-center bg-white text-[#0a3d62] rounded-3xl shadow-xl px-6 py-3 gap-x-4">
-            <div class="w-9 h-9 bg-[#166534] text-white rounded-2xl flex items-center justify-center text-lg">TB</div>
-            <div>
-                <div class="font-semibold">Tapendra Baduwal</div>
-                <div class="text-xs uppercase tracking-widest">Founder &amp; Principal Engineer</div>
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content reveal">
+            <h1>Engineering Excellence,<br>Built on Trust.</h1>
+            <p>Premium Civil Engineering Consultancy in Nepal. Over 6 years of industry experience with a portfolio of 100+ successfully completed residential, commercial, and infrastructure projects.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="#portfolio" class="btn btn-outline">View Our Work</a>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
-                <div class="md:col-span-7">
-                    <div class="section-header">
-                        <span class="uppercase text-[#166534] text-sm font-semibold tracking-[2px]">OUR STORY</span>
-                        <h2 class="heading-font text-5xl text-[#0a3d62] mt-3">Building Nepal's future with precision and integrity</h2>
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-text reveal">
+                <h2>About The Firm</h2>
+                <div class="divider"></div>
+                <p><strong>Tapendra Design & Construction</strong> is a premier civil engineering consultancy based in Nepal, dedicated to delivering robust, safe, and cost-effective engineering solutions. We bridge the gap between architectural vision and structural reality.</p>
+                <p>Founded and led by <strong>Tapendra Baduwal</strong>, a dedicated professional with over 6 years of rigorous site and design experience. Our firm operates on the principles of professional ethics, technical mastery, and uncompromising quality.</p>
+                <p>Whether it is a private residence, a commercial complex, or institutional infrastructure, we ensure every blueprint translates into a lasting legacy.</p>
+            </div>
+            <div class="about-stats reveal delay-1">
+                <div class="stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3 class="counter" data-target="6">0</h3>
+                    <span>Years Experience</span>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-building"></i>
+                    <h3 class="counter" data-target="100">0</h3>
+                    <span>Projects Completed</span>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <span>Expert Contractors</span>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-handshake"></i>
+                    <h3 class="counter" data-target="100">0</h3>
+                    <span>Client Satisfaction (%)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Expertise</h2>
+                <div class="divider center"></div>
+                <p>Comprehensive civil engineering consulting tailored to your project's unique demands.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <i class="fas fa-cube"></i>
+                    <h3>Structural Design</h3>
+                    <p>Advanced RCC and Steel structural analysis ensuring safety, compliance, and material optimization.</p>
+                </div>
+                <div class="service-card reveal delay-1">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Architectural Drawings</h3>
+                    <p>Functional and aesthetic spatial planning, 2D/3D modeling, and municipal approval drawings.</p>
+                </div>
+                <div class="service-card reveal delay-2">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Quantity Estimation & BOQ</h3>
+                    <p>Precise material take-offs and Bill of Quantities to ensure strict budget management.</p>
+                </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-binoculars"></i>
+                    <h3>Site Supervision</h3>
+                    <p>Rigorous on-site quality control, ensuring contractors adhere to approved designs and specifications.</p>
+                </div>
+                <div class="service-card reveal delay-1">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Project Planning</h3>
+                    <p>Strategic scheduling and resource allocation to guarantee timely project delivery.</p>
+                </div>
+                <div class="service-card reveal delay-2">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Tender Documents</h3>
+                    <p>Preparation of comprehensive bidding documents, contract formulations, and contractor evaluations.</p>
+                </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Feasibility Analysis</h3>
+                    <p>In-depth cost-benefit analysis and site viability assessments for commercial investments.</p>
+                </div>
+                <div class="service-card reveal delay-1">
+                    <i class="fas fa-helmet-safety"></i>
+                    <h3>Construction Consultancy</h3>
+                    <p>End-to-end advisory services resolving complex technical challenges from inception to handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Featured Projects</h2>
+                <div class="divider center"></div>
+                <p>A glimpse into our 100+ successfully engineered structures across Nepal.</p>
+            </div>
+
+            <div class="portfolio-filters reveal">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item commercial reveal" data-category="commercial">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Plaza</h4>
+                        <p>Commercial • Structural Design</p>
                     </div>
-                    
-                    <div class="prose text-lg text-[#2c3e50] mt-8 leading-relaxed">
-                        <p>Founded by Er. Tapendra Baduwal in 2018, Tapendra Design &amp; Construction has grown into one of Nepal's most respected civil engineering consultancies. With deep roots in practical site knowledge and advanced technical expertise, we deliver solutions that are not only structurally sound but also economically viable and environmentally responsible.</p>
-                        <p>Our team combines 6+ years of hands-on experience across residential, commercial, mixed-use, and infrastructure projects. Every project receives the same level of dedication — from a single-family home to large-scale institutional developments.</p>
+                </div>
+                <div class="portfolio-item residential reveal delay-1" data-category="residential">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Modern Villa</h4>
+                        <p>Residential • Turnkey Consultancy</p>
                     </div>
+                </div>
+                <div class="portfolio-item infrastructure reveal delay-2" data-category="infrastructure">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Municipal Bridge</h4>
+                        <p>Infrastructure • Site Supervision</p>
+                    </div>
+                </div>
+                <div class="portfolio-item residential reveal" data-category="residential">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Luxury Apartments</h4>
+                        <p>Residential • BOQ & Estimation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item commercial reveal delay-1" data-category="commercial">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Retail Complex</h4>
+                        <p>Commercial • Architectural & Structural</p>
+                    </div>
+                </div>
+                <div class="portfolio-item infrastructure reveal delay-2" data-category="infrastructure">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80');"></div>
+                    <div class="portfolio-info">
+                        <h4>Industrial Warehouse</h4>
+                        <p>Infrastructure • Steel Structure Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="section bg-navy text-white">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Why Choose Tapendra Design & Construction?</h2>
+                <div class="divider center divider-gold"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item reveal">
+                    <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                    <h4>Technical Expertise</h4>
+                    <p>Deep understanding of current building codes, seismic detailing, and advanced structural mechanics.</p>
+                </div>
+                <div class="feature-item reveal delay-1">
+                    <div class="feature-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4>Practical Site Experience</h4>
+                    <p>We don't just draw; we build. Our designs are highly practical and contractor-friendly.</p>
+                </div>
+                <div class="feature-item reveal delay-2">
+                    <div class="feature-icon"><i class="fas fa-piggy-bank"></i></div>
+                    <h4>Cost-Effective Solutions</h4>
+                    <p>Value engineering is at our core. We optimize materials without compromising structural integrity.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Professional Ethics</h4>
+                    <p>Total transparency, strict adherence to timelines, and zero compromise on safety standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Client Feedback</h2>
+                <div class="divider center"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Tapendra Design & Construction provided exceptional structural planning for our commercial complex. Their attention to seismic safety parameters and precise BOQ saved us significant overhead costs."</p>
+                    <div class="client-info">
+                        <h5>Institutional Developer</h5>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal delay-1">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Professional, punctual, and highly technically sound. Er. Tapendra's site supervision ensured our contractors followed the exact material specifications. Highly recommended for serious builders."</p>
+                    <div class="client-info">
+                        <h5>Private Homeowner</h5>
+                        <span>Pokhara, Nepal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <h2>Get in Touch</h2>
+                    <div class="divider"></div>
+                    <p>Ready to start your next project? Contact us for professional civil engineering consulting and site evaluations.</p>
                     
-                    <!-- Founder Profile -->
-                    <div class="mt-12 flex flex-col md:flex-row gap-8 bg-gray-50 p-8 rounded-3xl">
-                        <div class="w-28 h-28 bg-[#0a3d62] text-white rounded-3xl flex-shrink-0 flex items-center justify-center text-6xl font-light">TB</div>
-                        <div>
-                            <h4 class="text-2xl font-semibold text-[#0a3d62]">Er. Tapendra Baduwal</h4>
-                            <p class="text-[#166534] font-medium">Founder &amp; Principal Civil Engineer • B.E. Civil Engineering</p>
-                            <p class="mt-4 text-[#2c3e50]">With over six years of professional practice, Tapendra brings unmatched site supervision experience combined with modern design methodologies. His philosophy: “Engineering is not just about drawing lines — it’s about creating safe, beautiful, and lasting spaces for Nepali families and businesses.”</p>
-                            <div class="mt-6 flex gap-x-6 text-sm">
-                                <div><i class="fa-solid fa-certificate mr-1"></i> Licensed Civil Engineer</div>
-                                <div><i class="fa-solid fa-certificate mr-1"></i> Member, Nepal Engineers Association</div>
+                    <div class="contact-details">
+                        <div class="c-item">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Principal Engineer</h4>
+                                <p>Er. Tapendra Baduwal</p>
+                            </div>
+                        </div>
+                        <div class="c-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+977 9858033890</p>
+                            </div>
+                        </div>
+                        <div class="c-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Nepal (Nationwide Service)</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="md:col-span-5">
-                    <div class="bg-[#0a3d62] text-white p-8 rounded-3xl h-full flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-3xl font-medium">Our Promise</h3>
-                            <ul class="mt-8 space-y-6">
-                                <li class="flex gap-x-4"><i class="fa-solid fa-check text-[#d4af77] mt-1"></i> <span>Timely delivery without compromising quality</span></li>
-                                <li class="flex gap-x-4"><i class="fa-solid fa-check text-[#d4af77] mt-1"></i> <span>Transparent cost estimation and value engineering</span></li>
-                                <li class="flex gap-x-4"><i class="fa-solid fa-check text-[#d4af77] mt-1"></i> <span>Seismic-resistant designs tailored for Nepal’s terrain</span></li>
-                                <li class="flex gap-x-4"><i class="fa-solid fa-check text-[#d4af77] mt-1"></i> <span>End-to-end consultancy from concept to completion</span></li>
-                            </ul>
+                <div class="contact-form-container reveal delay-1">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="Enter your name">
                         </div>
-                        <div class="mt-auto pt-8 border-t border-white/20 text-sm flex items-center justify-between">
-                            <div>100+ Projects • Kathmandu • Pokhara • Chitwan • Beyond</div>
-                            <div class="text-[#d4af77]">ESTD 2018</div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required placeholder="Enter your phone number">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="service">Required Service</label>
+                            <select id="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="structural">Structural Design</option>
+                                <option value="supervision">Site Supervision</option>
+                                <option value="estimation">BOQ & Estimation</option>
+                                <option value="other">General Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" rows="4" required placeholder="Briefly describe your project requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Request Consultation</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE &amp; STATS -->
-    <section class="py-16 bg-[#0a3d62] text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Stat 1 -->
-                <div class="text-center">
-                    <div id="years-counter" class="counter text-7xl font-semibold heading-font">0</div>
-                    <div class="uppercase text-[#d4af77] text-sm tracking-widest mt-2">Years of Excellence</div>
-                    <div class="text-white/70 text-2xl">6+</div>
-                </div>
-                <!-- Stat 2 -->
-                <div class="text-center">
-                    <div id="projects-counter" class="counter text-7xl font-semibold heading-font">0</div>
-                    <div class="uppercase text-[#d4af77] text-sm tracking-widest mt-2">Projects Completed</div>
-                    <div class="text-white/70 text-2xl">100+</div>
-                </div>
-                <!-- Stat 3 -->
-                <div class="text-center">
-                    <div id="clients-counter" class="counter text-7xl font-semibold heading-font">0</div>
-                    <div class="uppercase text-[#d4af77] text-sm tracking-widest mt-2">Satisfied Clients</div>
-                    <div class="text-white/70 text-2xl">50+</div>
-                </div>
-                <!-- Stat 4 -->
-                <div class="text-center">
-                    <div id="services-counter" class="counter text-7xl font-semibold heading-font">0</div>
-                    <div class="uppercase text-[#d4af77] text-sm tracking-widest mt-2">Service Categories</div>
-                    <div class="text-white/70 text-2xl">8</div>
-                </div>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h3><span class="logo-t">T</span>apendra</h3>
+                <p>Design & Construction</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="uppercase text-[#166534] text-sm font-semibold tracking-[2px]">OUR EXPERTISE</span>
-                <h2 class="heading-font text-5xl text-[#0a3d62] mt-3">Comprehensive Civil Engineering Services</h2>
-                <p class="max-w-lg mx-auto mt-4 text-[#2c3e50]">From initial concept to final handover — every stage is handled with precision and care.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service cards -->
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">🏗️</div>
-                    <h4 class="text-2xl font-semibold mb-3">Structural Design</h4>
-                    <p class="text-[#2c3e50]">RCC &amp; Steel structures. Seismic analysis &amp; retrofitting for Nepal’s seismic zone.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">📐</div>
-                    <h4 class="text-2xl font-semibold mb-3">Architectural Drawings</h4>
-                    <p class="text-[#2c3e50]">Detailed 2D/3D plans, elevations, and 3D visualizations that bring your vision to life.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">📋</div>
-                    <h4 class="text-2xl font-semibold mb-3">Quantity Estimation &amp; BOQ</h4>
-                    <p class="text-[#2c3e50]">Accurate material take-offs, cost estimation, and detailed Bill of Quantities.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">👷</div>
-                    <h4 class="text-2xl font-semibold mb-3">Site Supervision</h4>
-                    <p class="text-[#2c3e50]">Regular site inspections, quality control, and compliance with approved drawings.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">📅</div>
-                    <h4 class="text-2xl font-semibold mb-3">Project Planning &amp; Scheduling</h4>
-                    <p class="text-[#2c3e50]">CPM/PERT networks, Gantt charts, and resource optimization for on-time delivery.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">📄</div>
-                    <h4 class="text-2xl font-semibold mb-3">Tender Documents</h4>
-                    <p class="text-[#2c3e50]">Complete tender packages, specifications, and contract documents for contractors.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">📊</div>
-                    <h4 class="text-2xl font-semibold mb-3">Feasibility &amp; Cost Analysis</h4>
-                    <p class="text-[#2c3e50]">Detailed feasibility studies, lifecycle costing, and value engineering reports.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:border-[#d4af77]/30 group">
-                    <div class="w-14 h-14 bg-[#166534]/10 text-[#166534] rounded-2xl flex items-center justify-center text-3xl mb-6">🧭</div>
-                    <h4 class="text-2xl font-semibold mb-3">Construction Consultancy</h4>
-                    <p class="text-[#2c3e50]">End-to-end guidance, dispute resolution, and quality assurance throughout construction.</p>
-                    <div class="mt-8 text-xs uppercase font-medium text-[#166534] flex items-center gap-x-1 group-hover:gap-x-3">
-                        LEARN MORE <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS / PORTFOLIO -->
-    <section id="projects" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-baseline mb-12">
-                <div>
-                    <span class="uppercase text-[#166534] text-sm font-semibold tracking-[2px]">PORTFOLIO</span>
-                    <h2 class="heading-font text-5xl text-[#0a3d62]">100+ Projects Delivered with Pride</h2>
-                </div>
-                
-                <!-- Filters -->
-                <div class="flex gap-x-3 mt-6 md:mt-0" id="project-filters">
-                    <button onclick="filterProjects('all')" class="project-filter active px-8 py-3 text-sm font-semibold rounded-3xl border border-[#0a3d62]">ALL PROJECTS</button>
-                    <button onclick="filterProjects('residential')" class="project-filter px-8 py-3 text-sm font-semibold rounded-3xl border border-[#0a3d62]">RESIDENTIAL</button>
-                    <button onclick="filterProjects('commercial')" class="project-filter px-8 py-3 text-sm font-semibold rounded-3xl border border-[#0a3d62]">COMMERCIAL</button>
-                    <button onclick="filterProjects('infrastructure')" class="project-filter px-8 py-3 text-sm font-semibold rounded-3xl border border-[#0a3d62]">INFRASTRUCTURE</button>
-                </div>
-            </div>
-            
-            <div id="projects-grid" class="grid md:grid-cols-3 gap-8">
-                <!-- Populated via JS -->
-            </div>
-            
-            <div class="text-center mt-12 text-sm uppercase font-medium text-[#166534] flex items-center justify-center gap-x-3">
-                <div class="flex-1 h-px bg-gradient-to-r from-transparent to-[#d4af77]"></div>
-                AND 90+ MORE PROJECTS ACROSS NEPAL
-                <div class="flex-1 h-px bg-gradient-to-l from-transparent to-[#d4af77]"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section id="whyus" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-5">
-                    <span class="uppercase text-[#166534] text-sm font-semibold tracking-[2px]">WHY PARTNER WITH US</span>
-                    <h2 class="heading-font text-5xl text-[#0a3d62] mt-3 leading-none">Technical expertise.<br>Practical wisdom.<br>Proven results.</h2>
-                    <p class="mt-8 text-xl text-[#2c3e50]">We don’t just design structures — we design confidence.</p>
-                </div>
-                
-                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <div class="flex gap-x-6">
-                        <div class="text-5xl text-[#d4af77]">01</div>
-                        <div>
-                            <h4 class="font-semibold text-2xl">Field-Proven Expertise</h4>
-                            <p class="mt-3 text-[#2c3e50]">Our engineers have supervised over 100 sites across Nepal’s diverse terrain. Theory meets real-world application every single day.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-x-6">
-                        <div class="text-5xl text-[#d4af77]">02</div>
-                        <div>
-                            <h4 class="font-semibold text-2xl">Cost-Effective Innovation</h4>
-                            <p class="mt-3 text-[#2c3e50]">We optimize every rupee through value engineering while never compromising structural integrity or safety.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-x-6">
-                        <div class="text-5xl text-[#d4af77]">03</div>
-                        <div>
-                            <h4 class="font-semibold text-2xl">Full Transparency</h4>
-                            <p class="mt-3 text-[#2c3e50]">Weekly progress reports, live site photos, and direct communication with the founder ensure you are always in control.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-x-6">
-                        <div class="text-5xl text-[#d4af77]">04</div>
-                        <div>
-                            <h4 class="font-semibold text-2xl">Ethical &amp; Sustainable Practice</h4>
-                            <p class="mt-3 text-[#2c3e50]">We prioritize green materials, local labor, and designs that respect Nepal’s cultural and environmental context.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="py-24 bg-[#f8f9fa]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="uppercase text-[#166534] text-sm font-semibold tracking-[2px]">CLIENT VOICES</span>
-                <h2 class="heading-font text-5xl text-[#0a3d62] mt-3">What our clients say</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="flex gap-x-1 text-[#d4af77] mb-6">
-                        ★★★★☆
-                    </div>
-                    <p class="italic text-[#2c3e50]">"Tapendra Design &amp; Construction delivered our 4-storey commercial building on time and within budget. Their seismic design expertise gave us complete peace of mind."</p>
-                    <div class="mt-8 flex items-center gap-x-4">
-                        <div class="w-11 h-11 bg-[#0a3d62] rounded-2xl flex items-center justify-center text-white text-xl">RK</div>
-                        <div>
-                            <div class="font-semibold">Rajesh Koirala</div>
-                            <div class="text-sm text-gray-500">Managing Director, Koirala Traders Pvt. Ltd.</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="flex gap-x-1 text-[#d4af77] mb-6">
-                        ★★★★★
-                    </div>
-                    <p class="italic text-[#2c3e50]">"From concept to handover, their team handled everything professionally. The quantity estimation was spot-on and saved us significant costs. Highly recommended for any residential or institutional project."</p>
-                    <div class="mt-8 flex items-center gap-x-4">
-                        <div class="w-11 h-11 bg-[#166534] rounded-2xl flex items-center justify-center text-white text-xl">SP</div>
-                        <div>
-                            <div class="font-semibold">Srijana Poudel</div>
-                            <div class="text-sm text-gray-500">House Owner, Bhaktapur</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <div class="flex gap-x-1 text-[#d4af77] mb-6">
-                        ★★★★☆
-                    </div>
-                    <p class="italic text-[#2c3e50]">"Excellent site supervision and timely BOQ revisions. They helped us navigate local regulations smoothly. Truly a trustworthy partner for infrastructure projects in Nepal."</p>
-                    <div class="mt-8 flex items-center gap-x-4">
-                        <div class="w-11 h-11 bg-[#2c3e50] rounded-2xl flex items-center justify-center text-white text-xl">NC</div>
-                        <div>
-                            <div class="font-semibold">Niraj Chaudhary</div>
-                            <div class="text-sm text-gray-500">Contractor, Pokhara</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 bg-[#0a3d62] text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16">
-            <!-- Left info -->
-            <div class="md:col-span-5">
-                <h2 class="heading-font text-5xl">Let’s build something<br>extraordinary together</h2>
-                <p class="mt-6 text-white/80 text-lg">Whether you’re an individual homeowner, contractor, commercial developer, or institution — our door (and inbox) is always open.</p>
-                
-                <div class="mt-12 space-y-8">
-                    <div class="flex items-start gap-x-6">
-                        <i class="fa-solid fa-user-tie text-3xl mt-1 text-[#d4af77]"></i>
-                        <div>
-                            <div class="font-semibold text-lg">Er. Tapendra Baduwal</div>
-                            <div class="text-white/70">Founder &amp; Principal Engineer</div>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-x-6">
-                        <i class="fa-solid fa-phone text-3xl mt-1 text-[#d4af77]"></i>
-                        <div>
-                            <a href="tel:+9779858033890" class="font-semibold text-2xl">+977 9858033890</a>
-                            <div class="text-white/70">Call or WhatsApp anytime</div>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-x-6">
-                        <i class="fa-solid fa-location-dot text-3xl mt-1 text-[#d4af77]"></i>
-                        <div>
-                            <div class="font-semibold">Kathmandu, Nepal</div>
-                            <div class="text-white/70">Serving nationwide</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-16 text-sm flex items-center gap-x-8">
-                    <div class="flex-1 h-px bg-white/30"></div>
-                    <div>OFFICE HOURS: SUN–FRI 9AM–6PM</div>
-                    <div class="flex-1 h-px bg-white/30"></div>
-                </div>
-            </div>
-            
-            <!-- Contact Form -->
-            <div class="md:col-span-7 bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20">
-                <form id="contact-form" class="space-y-8">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-white/70 text-sm mb-2">YOUR NAME</label>
-                            <input type="text" id="name" required
-                                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[#d4af77]">
-                        </div>
-                        <div>
-                            <label class="block text-white/70 text-sm mb-2">PHONE NUMBER</label>
-                            <input type="tel" id="phone" required
-                                   class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[#d4af77]">
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-white/70 text-sm mb-2">EMAIL ADDRESS</label>
-                        <input type="email" id="email" required
-                               class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[#d4af77]">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-white/70 text-sm mb-2">SERVICE INTERESTED IN</label>
-                        <select id="service" class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-[#d4af77]">
-                            <option value="">Select a service</option>
-                            <option value="Structural Design">Structural Design (RCC / Steel)</option>
-                            <option value="Architectural Drawings">Architectural Drawings</option>
-                            <option value="Quantity Estimation">Quantity Estimation &amp; BOQ</option>
-                            <option value="Site Supervision">Site Supervision</option>
-                            <option value="Project Planning">Project Planning &amp; Scheduling</option>
-                            <option value="Tender Documents">Tender Documents</option>
-                            <option value="Feasibility Study">Feasibility &amp; Cost Analysis</option>
-                            <option value="Construction Consultancy">Construction Consultancy</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-white/70 text-sm mb-2">PROJECT DETAILS / MESSAGE</label>
-                        <textarea id="message" rows="5" required
-                                  class="w-full bg-white/10 border border-white/30 rounded-3xl px-6 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[#d4af77]"></textarea>
-                    </div>
-                    
-                    <button type="submit"
-                            class="w-full bg-[#d4af77] hover:bg-[#c9a66b] text-[#0a3d62] font-semibold py-6 rounded-3xl text-lg flex items-center justify-center gap-x-3">
-                        SEND MESSAGE &amp; REQUEST CONSULTATION
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/9779858033890?text=Hello%20Tapendra%20Design%20%26%20Construction%2C%20I%20am%20interested%20in%20your%20civil%20engineering%20services"
-       target="_blank"
-       class="fixed bottom-6 right-6 z-[100] bg-[#25D366] hover:scale-110 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-2xl text-4xl">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- FOOTER -->
-    <footer class="bg-[#2c3e50] text-white/80 py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start">
-                <div>
-                    <div class="flex items-center gap-x-3 text-white">
-                        <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#d4af77" stroke-width="4"/>
-                            <path d="M16 24H32" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-                            <path d="M24 16V32" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="24" cy="24" r="4" fill="#166534"/>
-                        </svg>
-                        <div class="heading-font text-3xl">Tapendra Design &amp; Construction</div>
-                    </div>
-                    <p class="mt-4 max-w-xs text-sm">Professional civil engineering consultancy serving Nepal with integrity, innovation, and excellence since 2018.</p>
-                    
-                    <div class="mt-8 flex gap-x-6 text-2xl">
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                </div>
-                
-                <div class="mt-12 md:mt-0 grid grid-cols-3 gap-x-12 text-sm">
-                    <div>
-                        <div class="font-semibold text-white mb-4">QUICK LINKS</div>
-                        <div onclick="smoothScrollTo('services')" class="cursor-pointer mb-2">Services</div>
-                        <div onclick="smoothScrollTo('projects')" class="cursor-pointer mb-2">Portfolio</div>
-                        <div onclick="smoothScrollTo('whyus')" class="cursor-pointer">Why Choose Us</div>
-                    </div>
-                    <div>
-                        <div class="font-semibold text-white mb-4">CONTACT</div>
-                        <a href="tel:+9779858033890" class="block mb-2">+977 9858033890</a>
-                        <div class="mb-2">Kathmandu, Nepal</div>
-                        <div>tapendrabaduwal@gmail.com</div>
-                    </div>
-                    <div>
-                        <div class="font-semibold text-white mb-4">LEGAL</div>
-                        <div class="mb-2">Privacy Policy</div>
-                        <div>© 2026 Tapendra Design &amp; Construction</div>
-                        <div class="text-xs mt-8">Proudly made for Nepal’s growth</div>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Tapendra Design & Construction. All Rights Reserved. Engineered for Excellence.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/9779858033890" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h2>Message Sent!</h2>
+            <p>Thank you for reaching out. Er. Tapendra Baduwal will contact you shortly regarding your project.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
