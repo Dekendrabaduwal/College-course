@@ -1,94 +1,40 @@
-/* ================================================
-   style.css
-   Tapendra Design & Construction – Full Custom CSS
-   Professional, premium, clean & production-ready
-   ================================================ */
-
+/* style.css - Complete Custom Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
 
-/* ====================== ROOT & GLOBAL ====================== */
 :root {
     --primary: #0a3d62;
     --accent: #166534;
     --gold: #d4af77;
     --charcoal: #2c3e50;
-    --text: #2c3e50;
 }
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    line-height: 1.6;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--text);
-    overflow-x: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-.heading-font {
-    font-family: 'Space Grotesk', sans-serif;
-}
+.heading-font { font-family: 'Space Grotesk', sans-serif; }
 
-/* ====================== TYPOGRAPHY ====================== */
-h1, h2, h3, h4 {
-    line-height: 1.1;
-    font-weight: 600;
-}
-
-h1 {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    letter-spacing: -2px;
-}
-
-h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-.section-header {
-    position: relative;
-    display: inline-block;
-}
-
-.section-header::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background: var(--gold);
-    bottom: -10px;
-    left: 0;
-}
-
-/* ====================== NAVIGATION ====================== */
+/* NAV */
 .sticky-nav {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255,255,255,0.98);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-    box-shadow: 0 4px 20px -4px rgba(10, 61, 98, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(44,62,80,0.1);
+    box-shadow: 0 4px 20px -4px rgba(10,61,98,0.1);
 }
-
 .nav-link {
     position: relative;
     color: var(--charcoal);
     font-weight: 500;
-    font-size: 1.1rem;
-    text-decoration: none;
     padding: 4px 0;
 }
-
 .nav-link:after {
     content: '';
     position: absolute;
@@ -97,33 +43,15 @@ h2 {
     width: 0;
     height: 3px;
     background: var(--gold);
-    transition: width 0.3s ease;
+    transition: width .3s ease;
 }
-
 .nav-link:hover:after,
-.nav-link.active:after {
-    width: 100%;
-}
+.nav-link.active:after { width: 100%; }
+.nav-link.active { color: var(--primary); font-weight: 600; }
 
-.nav-link.active {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-/* Mobile menu */
-#mobile-menu {
-    animation: slideDown 0.3s ease forwards;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ====================== HERO ====================== */
+/* HERO */
 .hero-bg {
-    background: linear-gradient(rgba(10, 61, 98, 0.88), rgba(22, 101, 52, 0.82)),
-                url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(10,61,98,0.88), rgba(22,101,52,0.82)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -131,33 +59,18 @@ h2 {
     position: relative;
 }
 
-/* ====================== CARDS & HOVER EFFECTS ====================== */
-.card-hover {
+/* CARDS */
+.card-hover, .service-card {
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
     border-radius: 28px;
-    box-shadow: 0 10px 25px -10px rgba(10, 61, 98, 0.12);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+    box-shadow: 0 10px 25px -10px rgba(10,61,98,0.12);
 }
-
-.card-hover:hover {
+.card-hover:hover, .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 40px -15px rgba(212, 175, 119, 0.25);
-    border-color: var(--gold) !important;
+    box-shadow: 0 25px 40px -15px rgba(212,175,119,0.25);
 }
 
-/* Project cards */
-.project-card {
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px -10px rgba(10, 61, 98, 0.15);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover {
-    transform: scale(1.03);
-}
-
-/* ====================== BUTTONS ====================== */
+/* BUTTON */
 .btn-primary {
     background: var(--gold);
     color: var(--primary);
@@ -170,47 +83,29 @@ h2 {
     text-decoration: none;
     box-shadow: 0 10px 30px -10px var(--gold);
 }
-
 .btn-primary:hover {
     background: #c9a66b;
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px -10px var(--gold);
 }
 
-/* ====================== ANIMATIONS ====================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* FORM INPUTS */
+.form-input {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    border-radius: 20px;
+    padding: 18px 24px;
+    font-size: 1.05rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.form-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(212,175,119,0.2);
+    outline: none;
 }
 
-.reveal {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Counters */
-.counter {
-    font-variant-numeric: tabular-nums;
-    font-family: 'Space Grotesk', sans-serif;
-}
-
-/* ====================== SERVICES GRID ====================== */
-.services-grid .service-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.services-grid .service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 30px 30px 0 -15px rgba(212, 175, 119, 0.15);
-}
-
-/* ====================== FILTER BUTTONS ====================== */
+/* PROJECT FILTERS */
 .project-filter {
     border: 2px solid var(--primary);
     color: var(--primary);
@@ -220,73 +115,23 @@ h2 {
     background: transparent;
     cursor: pointer;
 }
-
 .project-filter.active,
 .project-filter:hover {
     background: var(--primary);
     color: white;
-    box-shadow: 0 10px 25px -5px var(--primary);
 }
 
-/* ====================== FORM STYLING ====================== */
-.form-input {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.3);
-    color: white;
-    border-radius: 20px;
-    padding: 18px 24px;
-    font-size: 1.05rem;
-    transition: all 0.3s ease;
+/* COUNTERS */
+.counter {
+    font-family: 'Space Grotesk', sans-serif;
+    font-variant-numeric: tabular-nums;
 }
 
-.form-input:focus {
-    border-color: var(--gold);
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(212, 175, 119, 0.2);
-}
+/* FOOTER */
+footer { background: var(--charcoal); color: white; }
 
-/* ====================== FOOTER ====================== */
-footer {
-    background: var(--charcoal);
-}
-
-/* ====================== UTILITY CLASSES ====================== */
-.text-gold { color: var(--gold); }
-.bg-primary { background-color: var(--primary); }
-.text-primary { color: var(--primary); }
-
-/* ====================== RESPONSIVE ====================== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero-bg {
-        min-height: 90vh;
-    }
-    
-    .nav-link {
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .section-header::after {
-        width: 100px;
-    }
-}
-
-/* ====================== SCROLL REVEAL & MICRO-INTERACTIONS ====================== */
-@media (prefers-reduced-motion: no-preference) {
-    .card-hover,
-    .project-card,
-    .reveal {
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-}
-
-/* Final polish – premium feel */
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    h1 { font-size: 2.8rem; }
+    .hero-bg { min-height: 90vh; }
 }
