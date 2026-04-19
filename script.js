@@ -1,123 +1,187 @@
-// script.js
-// Project data
-const projectsData = [
-    {id:1, type:"residential", title:"4-Storey Luxury Villa", location:"Budhanilkantha, Kathmandu", year:"2025", img:"https://picsum.photos/id/1015/600/400"},
-    {id:2, type:"residential", title:"Modern Duplex House", location:"Lakeside, Pokhara", year:"2024", img:"https://picsum.photos/id/1005/600/400"},
-    {id:3, type:"commercial", title:"G+7 Corporate Tower", location:"New Baneshwor, Kathmandu", year:"2025", img:"https://picsum.photos/id/1016/600/400"},
-    {id:4, type:"commercial", title:"Shopping Complex", location:"Bharatpur, Chitwan", year:"2023", img:"https://picsum.photos/id/133/600/400"},
-    {id:5, type:"infrastructure", title:"Community Health Center", location:"Dharan, Sunsari", year:"2024", img:"https://picsum.photos/id/160/600/400"},
-    {id:6, type:"infrastructure", title:"Bridge Rehabilitation", location:"Trishuli River", year:"2025", img:"https://picsum.photos/id/201/600/400"}
-];
+document.addEventListener('DOMContentLoaded', () => {
 
-// Render projects
-function renderProjects(filtered) {
-    const container = document.getElementById('projects-grid');
-    container.innerHTML = '';
-    filtered.forEach(p => {
-        container.innerHTML += `
-        <div class="project-card bg-white rounded-3xl overflow-hidden">
-            <img src="${p.img}" alt="${p.title}" class="w-full h-64 object-cover">
-            <div class="p-6">
-                <div class="uppercase text-xs text-[#166534]">${p.type}</div>
-                <h4 class="font-semibold text-xl mt-1">${p.title}</h4>
-                <p class="text-sm text-[#2c3e50]">${p.location} • ${p.year}</p>
-            </div>
-        </div>`;
-    });
-}
+    // 1. Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-// Filter projects
-window.filterProjects = function(category) {
-    document.querySelectorAll('.project-filter').forEach(b => b.classList.remove('active'));
-    if (category === 'all') {
-        document.querySelectorAll('.project-filter')[0].classList.add('active');
-        renderProjects(projectsData);
-    } else {
-        const btn = Array.from(document.querySelectorAll('.project-filter')).find(b => b.textContent.toLowerCase() === category);
-        if (btn) btn.classList.add('active');
-        const filtered = projectsData.filter(p => p.type === category);
-        renderProjects(filtered);
-    }
-};
-
-// Mobile menu
-window.toggleMobileMenu = function() {
-    const menu = document.getElementById('mobile-menu');
-    const icon = document.getElementById('mobile-icon');
-    menu.classList.toggle('hidden');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-};
-
-// Animated counters
-function animateCounter(id, target, duration = 1800) {
-    const el = document.getElementById(id);
-    let start = 0;
-    const step = Math.ceil(target / (duration / 16));
-    function update() {
-        start += step;
-        if (start >= target) { el.textContent = target + (id === 'years' || id === 'projects' || id === 'clients' ? '+' : ''); return; }
-        el.textContent = start;
-        requestAnimationFrame(update);
-    }
-    update();
-}
-
-// Intersection observer for counters
-function startCounters() {
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            animateCounter('years', 6);
-            animateCounter('projects', 100);
-            animateCounter('clients', 50);
-            animateCounter('services-count', 8);
-            observer.disconnect();
+    // 2. Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Change icon between bars and times
+        const icon = menuToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
-    observer.observe(document.getElementById('years'));
-}
 
-// Contact form
-function initForm() {
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = this.querySelector('button');
-        const original = btn.innerHTML;
-        btn.innerHTML = 'SENDING...';
-        setTimeout(() => {
-            btn.innerHTML = '✅ MESSAGE SENT!';
-            setTimeout(() => {
-                this.reset();
-                btn.innerHTML = original;
-                alert('Thank you! Er. Tapendra Baduwal will contact you within 2 hours.');
-            }, 2000);
-        }, 1500);
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        });
     });
-}
 
-// Active nav highlighting
-function highlightNav() {
-    const sections = ['home','about','services','projects','whyus','testimonials','contact'];
+    // 3. Sticky Navbar & Active Link Highlighting
+    const navbar = document.getElementById('navbar');
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
     window.addEventListener('scroll', () => {
+        // Sticky Nav logic
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Active Link Highlighting logic
         let current = '';
-        sections.forEach(sec => {
-            const el = document.getElementById(sec);
-            if (el && scrollY >= el.offsetTop - 150) current = sec;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
         });
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
+            }
         });
     });
-}
 
-// Initialize everything
-function initialize() {
-    renderProjects(projectsData);
-    startCounters();
-    initForm();
-    highlightNav();
-    console.log('%c✅ Tapendra Design & Construction – Full custom website ready', 'background:#0a3d62;color:#d4af77;padding:4px 8px;border-radius:4px');
-}
+    // 4. Scroll Reveal Animation using Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-window.onload = initialize;
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('active');
+            // Stop observing once revealed
+            observer.unobserve(entry.target);
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealOnScroll.observe(el);
+    });
+
+    // 5. Animated Counters logic
+    const counters = document.querySelectorAll('.counter');
+    let hasCounted = false;
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !hasCounted) {
+            hasCounted = true;
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    
+                    // Lower increment divisor makes it faster
+                    const inc = target / 50; 
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 40);
+                    } else {
+                        counter.innerText = target + "+";
+                    }
+                };
+                updateCount();
+            });
+        }
+    }, { threshold: 0.5 });
+
+    // Observe the stats container to trigger counters
+    const statsContainer = document.querySelector('.about-stats');
+    if (statsContainer) {
+        counterObserver.observe(statsContainer);
+    }
+
+    // 6. Portfolio Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    // Slight timeout to allow display:block to apply before animating opacity
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300); // Matches CSS transition time
+                }
+            });
+        });
+    });
+
+    // 7. Contact Form & Modal Interaction
+    const contactForm = document.getElementById('contactForm');
+    const modal = document.getElementById('successModal');
+    const closeModal = document.querySelector('.close-modal');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simulating form processing
+        const btn = contactForm.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = 'Sending...';
+        btn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.opacity = '1';
+            
+            // Show Success Modal
+            modal.style.display = 'flex';
+            
+            // Reset form
+            contactForm.reset();
+        }, 1200);
+    });
+
+    // Close Modal Logic
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+});
